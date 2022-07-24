@@ -121,7 +121,7 @@ li{
 
 .icon {
     
-    fill: #757575;
+    fill: currentColor;
     margin-right: 10px;
 }
 .link-contact:hover{
@@ -350,6 +350,7 @@ li{
     justify-content: center;
     width: 44px;
     height: 44px;
+    color: #AFB1B8;
     background-color: #FFFFFF;
     border: 1px solid #fff;
     border-radius: 50% 50%;
@@ -358,13 +359,14 @@ li{
 
 .icon-social-page{
     
-    fill: #AFB1B8;
+    fill: currentColor;
     
 }
 .link-social-page:hover,
 :focus{
     background-color: var(--accent-color);
-    fill: #FFFFFF;
+    color: #ffffff;
+    
 }
 
 
@@ -402,19 +404,21 @@ li{
     justify-content: center;
     width: 170px;
     height: 92px;
+    color: #AFB1B8;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     
 }
 
 .clients-logo{
-    fill: #AFB1B8;
+    fill: currentColor;
 }
 
 .link-clients-logo:hover,
 :focus{
   border: 1px solid var(--accent-color);
-  fill: var(--accent-color);
+  color: var(--accent-color);
+  
 }
 
 /* Footer */
