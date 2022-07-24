@@ -105,7 +105,8 @@ li{
     color: var(--primary-color);
     
 }
-   .link:hover{
+   .link:hover,
+   .link:focus{
     color: var(--accent-color);
 }   
 
@@ -124,7 +125,8 @@ li{
     fill: currentColor;
     margin-right: 10px;
 }
-.link-contact:hover{
+.link-contact:hover,
+.link-contact:focus{
     fill: var(--accent-color);
     color: var(--accent-color);
     
@@ -200,7 +202,6 @@ li{
     font-weight: var(--bold-font);
     color: var(--primary-color);
     text-transform: uppercase;
-    margin-top: 30px;
     margin-bottom: 10px;
    
 }
@@ -223,6 +224,7 @@ li{
     height: 120px;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
    
@@ -363,7 +365,7 @@ li{
     
 }
 .link-social-page:hover,
-:focus{
+.link-social-page:focus{
     background-color: var(--accent-color);
     color: #ffffff;
     
@@ -415,7 +417,7 @@ li{
 }
 
 .link-clients-logo:hover,
-:focus{
+.link-clients-logo:focus{
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
   
@@ -527,8 +529,8 @@ li{
     margin-right: 10px;
     
 }
-.link-footer-logo-social:hover,
-:focus{
+.link-footer-logo-social:hover, 
+.link-footer-logo-social:focus{
     background-color: var(--accent-color);
 }
 .footer-logo-social{
@@ -604,7 +606,7 @@ li{
     text-decoration: none;
 } 
 .link-projects:hover,
-:focus{
+.link-projects:focus{
     box-shadow: 3px 3px  rgba(0, 0, 0, 0.1);
 }
 
