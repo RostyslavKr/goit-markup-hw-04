@@ -18,6 +18,9 @@
 li{
     list-style: none;
 }
+button{
+    cursor: pointer;
+}
 .body {
     font-family: var(--primary-font);
     color:var(--primary-color);
@@ -98,12 +101,13 @@ li{
 
 
 .link{
+    position: relative;
     text-decoration: none;
     font-family: var(--primary-font);
     font-size: 14px;
     font-weight: var(--medium-font);
     color: var(--primary-color);
-    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
    .link:hover,
    .link:focus{
@@ -118,6 +122,7 @@ li{
     font-weight: var(--medium-font);
     color: var(--secondery-color);
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon {
@@ -346,6 +351,11 @@ li{
     justify-content: center;
     
 }
+
+.item-social-page:not(:last-child){
+    margin-right: 10px;
+}
+
 .link-social-page {
     display: flex;
     align-items: center;
@@ -356,7 +366,7 @@ li{
     background-color: #FFFFFF;
     border: 1px solid #fff;
     border-radius: 50% 50%;
-
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-social-page{
@@ -409,7 +419,7 @@ li{
     color: #AFB1B8;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-logo{
@@ -524,6 +534,7 @@ li{
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid transparent;
     border-radius: 50% 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-social-footer:not(:last-child) {
     margin-right: 10px;
@@ -537,8 +548,61 @@ li{
     fill:#ffffff;
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: opacity 1000ms linear; 
+}
+.backdrop.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    
+}
 
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;
+    background-color: #FFFFFF;
+}
 
+.btn-modal{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 0;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.icon-btn-modal{
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-modal:hover,
+.btn-modal:focus{
+    border: 1px solid var(--accent-color);
+    
+}
+.btn-modal:hover .icon-btn-modal,
+.btn-modal:focus .icon-btn-modal{
+    fill: var(--accent-color);
+}
 /*Portfolio*/
 
 .projects{
@@ -575,6 +639,7 @@ li{
     border: none;
     border-radius: 4px;
     padding: 5px 20px 5px 20px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .internal:hover{
@@ -604,6 +669,7 @@ li{
  .link-projects{
     display: block;
     text-decoration: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 .link-projects:hover,
 .link-projects:focus{
@@ -643,6 +709,47 @@ li{
     margin: 0;
     
 }
+.list-img-wrapper{
+position: relative;
+overflow: hidden;
+}
+.overlay{
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+margin: 0;
+padding: 63px 24px;
+transform: translate(0%, 100%);
+transition: transform 500ms linear;
+overflow: auto;
+font-family: var(--primary-font);
+font-size: var(--normal-font);
+font-size: 18px;
+line-height: 1.56;
+letter-spacing: 0.03em;
+color: #FFFFFF;
+background-color: rgba(33, 150, 243, 0.9);;
+}
+.item-projects:hover .overlay,
+.item-projects:focus .overlay{
+transform: translate(0, 0);
+
+}
 .current {
+    display: block;
     color: var(--accent-color);
 }
+ .current::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #2196F3;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -200%;
+    
+}   
